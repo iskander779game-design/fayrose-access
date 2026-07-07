@@ -11,17 +11,11 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-
-<div class="background"></div>
-
-<div class="overlay"></div>
-
-<div class="particles"></div>
 
 <div class="container">
 
@@ -36,9 +30,19 @@ Wear The Mystery.<br>
 Live The Story.
 </p>
 
-<div class="line"></div>
+<div class="divider">
 
-<div id="passwordBox">
+<span></span>
+
+<i>✦</i>
+
+<span></span>
+
+</div>
+
+<p class="welcome">
+SECRET ACCESS
+  <div id="passwordBox">
 
 <input
 type="password"
@@ -60,7 +64,7 @@ Congratulations, Seeker.
 </h2>
 
 <p>
-You have unlocked the first gate.
+You have unlocked the First Gate.
 </p>
 
 <input
@@ -73,8 +77,13 @@ type="text"
 id="lastname"
 placeholder="Last Name">
 
-<button onclick="submitIdentity()">
-ENTER
+<input
+type="email"
+id="email"
+placeholder="Email Address">
+  
+</p><button onclick="submitIdentity()">
+ENTER THE STORY
 </button>
 
 </div>
