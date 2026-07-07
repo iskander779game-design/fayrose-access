@@ -117,92 +117,22 @@ tsParticles.load("particles-js", {
 // ==========================================
 
 const enterBtn = document.getElementById("enterBtn");
+const secretKey = document.getElementById("secretKey");
 
 enterBtn.addEventListener("click", () => {
+
+    if (secretKey.value !== "keyrose") {
+        alert("Wrong Secret Key");
+        return;
+    }
 
     gsap.to(".container", {
-
-        duration: .8,
-
         opacity: 0,
-
-        scale: .98,
-
+        duration: 1,
         onComplete() {
-
-            // المرحلة القادمة:
-            // هنا سنعرض
-            // Congratulations Screen
-
+            document.querySelector(".container").style.display = "none";
+            // هنا نكملو الصفحة الثانية
         }
-
-    });
-
-});
-const landing = document.getElementById("landing-screen");
-const gate = document.getElementById("gate-screen");
-const register = document.getElementById("register-screen");
-
-enterBtn.addEventListener("click", () => {
-
-    gsap.to(landing,{
-
-        opacity:0,
-
-        duration:1,
-
-        onComplete(){
-
-            landing.style.display="none";
-
-            gate.classList.remove("hidden");
-
-            gate.style.display="flex";
-
-            gsap.fromTo(gate,
-
-            {
-
-                opacity:0,
-
-                scale:.9
-
-            },
-
-            {
-
-                opacity:1,
-
-                scale:1,
-
-                duration:1
-
-            });
-
-            setTimeout(()=>{
-
-                gsap.to(gate,{
-
-                    opacity:0,
-
-                    duration:1,
-
-                    onComplete(){
-
-                        gate.style.display="none";
-
-                        register.classList.remove("hidden");
-
-                        register.style.display="flex";
-
-                    }
-
-                });
-
-            },2200);
-
-        }
-
     });
 
 });
