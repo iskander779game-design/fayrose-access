@@ -131,6 +131,8 @@ enterBtn.addEventListener("click", () => {
         duration: 1,
         onComplete() {
             document.querySelector(".container").style.display = "none";
+
+document.getElementById("register-screen").style.display = "flex";
             // هنا نكملو الصفحة الثانية
         }
     });
