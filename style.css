@@ -310,3 +310,54 @@ transform:translateY(0px);
 
 /* لمعان الشعار */
 
+/* Remaining Places */
+
+.remaining{
+
+margin-top:35px;
+
+padding-top:20px;
+
+border-top:1px solid rgba(212,175,55,.25);
+
+}
+
+.remaining-title{
+
+font-family:'Cinzel',serif;
+
+color:#D4AF37;
+
+font-size:18px;
+
+letter-spacing:2px;
+
+margin-bottom:10px;
+
+}
+
+.remaining-count{
+
+color:#ddd;
+
+font-size:18px;
+
+line-height:32px;
+
+}
+
+#counter{
+
+display:block;
+
+margin-top:10px;
+
+font-size:32px;
+
+font-family:'Cinzel',serif;
+
+color:#D4AF37;
+
+text-shadow:0 0 15px rgba(212,175,55,.45);
+
+}
