@@ -1,27 +1,152 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+const SECRET_KEY = "FAYROSE1927"; // غيّرها إلى كلمة السر التي تريدها
+
+function checkPassword() {
+
+    let pass = document.getElementById("password").value;
+
+    if (pass === SECRET_KEY) {
+
+        document.getElementById("passwordBox").style.display = "none";
+        document.getElementById("identityBox").style.display = "block";
+
+    } else {
+
+        document.getElementById("error").innerHTML = "Wrong Secret Key";
+
+    }
+
 }
 
-html,body{
-width:100%;
-height:100%;
-overflow:hidden;
-font-family:'Cormorant Garamond',serif;
-background:#000;
-color:white;
+function submitIdentity() {
+
+    let first = document.getElementById("firstname").value.trim();
+    let last = document.getElementById("lastname").value.trim();
+
+    if (first === "" || last === "") {
+
+        alert("Please enter your First Name and Last Name.");
+
+        return;
+
+    }
+
+    /* سنربط Google Sheets هنا لاحقًا */
+
+    window.location.href = "home.html";
+
+}
+/* ===========================
+   PART 2
+   LOGO + TITLES
+=========================== */
+
+/* الوردة */
+
+.logo{
+
+font-size:75px;
+
+margin-bottom:20px;
+
+display:inline-block;
+
+animation:floatRose 5s ease-in-out infinite;
+
+filter:drop-shadow(0 0 18px rgba(255,60,60,.45));
+
 }
 
-body{
+/* عنوان FAYROSE */
 
-background-image:url("background.jpg");
+h1{
 
-background-size:cover;
+font-family:'Cinzel',serif;
 
-background-position:center;
+font-size:58px;
 
-background-repeat:no-repeat;
+font-weight:700;
+
+letter-spacing:8px;
+
+color:#D4AF37;
+
+text-shadow:
+
+0 0 10px rgba(212,175,55,.6),
+
+0 0 30px rgba(212,175,55,.25);
+
+margin-bottom:18px;
+
+animation:titleGlow 3s ease-in-out infinite;
+
+}
+
+/* السطر الذهبي */
+
+.line{
+
+width:150px;
+
+height:2px;
+
+margin:22px auto;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+#D4AF37,
+
+transparent
+
+);
+
+box-shadow:0 0 12px #D4AF37;
+
+}
+
+/* النص */
+
+.subtitle{
+
+font-size:23px;
+
+line-height:40px;
+
+color:#e8e8e8;
+
+margin-bottom:30px;
+
+letter-spacing:1px;
+
+}
+
+/* رسالة الترحيب */
+
+.welcome{
+
+font-family:'Cinzel',serif;
+
+font-size:19px;
+
+color:#D4AF37;
+
+margin-top:18px;
+
+margin-bottom:25px;
+
+opacity:.9;
+
+letter-spacing:2px;
+
+}
+
+/* الزخرفة */
+
+.divider{
 
 display:flex;
 
@@ -29,191 +154,159 @@ justify-content:center;
 
 align-items:center;
 
-position:relative;
+gap:12px;
+
+margin:25px 0;
 
 }
 
-.overlay{
+.divider span{
 
-position:absolute;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.65);
-
-backdrop-filter:blur(2px);
-
-}
-
-.container{
-
-position:relative;
-
-z-index:10;
-
-width:90%;
-
-max-width:420px;
-
-padding:35px;
-
-border:1px solid rgba(212,175,55,.35);
-
-border-radius:25px;
-
-background:rgba(0,0,0,.45);
-
-backdrop-filter:blur(15px);
-
-text-align:center;
-
-box-shadow:0 0 40px rgba(212,175,55,.15);
-
-}
-
-.logo{
-
-font-size:55px;
-
-margin-bottom:20px;
-
-animation:float 4s ease-in-out infinite;
-
-}
-
-h1{
-
-font-family:'Cinzel',serif;
-
-font-size:48px;
-
-color:#D4AF37;
-
-letter-spacing:6px;
-
-margin-bottom:15px;
-
-}
-
-.subtitle{
-
-font-size:20px;
-
-line-height:34px;
-
-color:#ddd;
-
-margin-bottom:25px;
-
-}
-
-.line{
-
-width:120px;
+width:70px;
 
 height:1px;
 
 background:#D4AF37;
 
-margin:0 auto 30px;
+box-shadow:0 0 10px #D4AF37;
 
 }
+
+.divider i{
+
+color:#D4AF37;
+
+font-size:18px;
+
+}
+/* ===========================
+   PART 3
+   INPUT + BUTTON
+=========================== */
+
+/* خانة Secret Key */
+
 input{
 
 width:100%;
 
-padding:18px;
+padding:18px 22px;
 
-margin-top:15px;
+margin-top:18px;
 
-border:1px solid #D4AF37;
+margin-bottom:25px;
 
-border-radius:12px;
+background:rgba(0,0,0,.55);
 
-background:rgba(0,0,0,.6);
+border:1.5px solid rgba(212,175,55,.55);
 
-color:white;
+border-radius:14px;
+
+color:#fff;
 
 font-size:18px;
 
+font-family:'Cormorant Garamond',serif;
+
 outline:none;
+
+transition:.35s;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 0 15px rgba(212,175,55,.08);
 
 }
 
 input::placeholder{
 
-color:#aaa;
+color:#b9b9b9;
+
+letter-spacing:2px;
 
 }
+
+input:focus{
+
+border-color:#D4AF37;
+
+box-shadow:
+
+0 0 10px rgba(212,175,55,.4),
+
+0 0 30px rgba(212,175,55,.25);
+
+transform:scale(1.02);
+
+}
+
+/* زر ENTER */
 
 button{
 
-margin-top:20px;
-
 width:100%;
+  /* ===========================
+   PART 4
+   ANIMATIONS + EFFECTS
+=========================== */
 
-padding:18px;
+/* رسالة Congratulations */
 
-background:#D4AF37;
+#identityBox{
 
-border:none;
-
-border-radius:12px;
-
-font-weight:bold;
-
-font-size:18px;
-
-cursor:pointer;
-
-transition:.35s;
-
-}
-
-button:hover{
-
-transform:scale(1.03);
-
-box-shadow:0 0 25px #D4AF37;
-
-}
-
-#error{
-
-margin-top:15px;
-
-color:#ff6666;
+animation:fadeUp .8s ease;
 
 }
 
 #identityBox h2{
 
+font-family:'Cinzel',serif;
+
+font-size:30px;
+
 color:#D4AF37;
 
 margin-bottom:15px;
+
+text-shadow:0 0 18px rgba(212,175,55,.45);
 
 }
 
 #identityBox p{
 
-margin-bottom:20px;
+font-size:19px;
 
-color:#ddd;
+line-height:32px;
+
+color:#ececec;
+
+margin-bottom:25px;
+
+}
+
+/* حركة الوردة */
+
+@keyframes floatRose{
+
+0%{
+
+transform:translateY(0px);
 
 }
 
-@keyframes float{
+50%{
 
-0%{transform:translateY(0px);}
-
-50%{transform:translateY(-10px);}
-
-100%{transform:translateY(0px);}
+transform:translateY(-12px);
 
 }
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* لمعان الشعار */
+
