@@ -477,3 +477,20 @@ transform:translateY(10px);
 
     font-size:17px;
 }
+#successMessage{
+    display:none;
+    text-align:center;
+    color:white;
+    margin-top:40px;
+}
+
+#successMessage h2{
+    color:#d4af37;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+#successMessage p{
+    font-size:18px;
+    line-height:1.7;
+}
