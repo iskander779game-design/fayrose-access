@@ -1,37 +1,141 @@
-const SECRET_KEY = "Annaba"; // غيّرها إلى كلمة السر التي تريدها
+// ==========================================
+// FAYROSE
+// Main Script
+// ==========================================
 
-function checkPassword() {
+// Wait for page
+window.addEventListener("load", () => {
 
-    let pass = document.getElementById("password").value;
+    // GSAP Intro Animation
+    gsap.from(".hero h1", {
+        duration: 1.5,
+        y: -40,
+        opacity: 0,
+        ease: "power3.out"
+    });
 
-    if (pass === SECRET_KEY) {
+    gsap.from(".tagline", {
+        duration: 1.4,
+        delay: .3,
+        opacity: 0,
+        y: 20
+    });
 
-        document.getElementById("passwordBox").style.display = "none";
-        document.getElementById("identityBox").style.display = "block";
+    gsap.from(".divider", {
+        duration: 1,
+        delay: .6,
+        opacity: 0
+    });
 
-    } else {
+    gsap.from(".access", {
+        duration: 1.3,
+        delay: .9,
+        opacity: 0,
+        y: 40
+    });
 
-        document.getElementById("error").innerHTML = "Wrong Secret Key";
+    gsap.from(".counter", {
+        duration: 1.3,
+        delay: 1.2,
+        opacity: 0,
+        y: 30
+    });
+
+    gsap.from(".scroll", {
+        duration: 1.3,
+        delay: 1.5,
+        opacity: 0
+    });
+
+});
+
+
+// ==========================================
+// Golden Particles
+// ==========================================
+
+tsParticles.load("particles-js", {
+
+    background: {
+        color: {
+            value: "transparent"
+        }
+    },
+
+    fpsLimit: 60,
+
+    particles: {
+
+        number: {
+            value: 35
+        },
+
+        color: {
+            value: "#d4af37"
+        },
+
+        shape: {
+            type: "circle"
+        },
+
+        opacity: {
+            value: 0.35
+        },
+
+        size: {
+            value: {
+                min: 1,
+                max: 3
+            }
+        },
+
+        move: {
+
+            enable: true,
+
+            speed: 0.5,
+
+            direction: "none",
+
+            random: true,
+
+            straight: false,
+
+            outModes: {
+                default: "out"
+            }
+
+        }
 
     }
 
-}
+});
 
-function submitIdentity() {
 
-    let first = document.getElementById("firstname").value.trim();
-    let last = document.getElementById("lastname").value.trim();
+// ==========================================
+// ENTER Button
+// ==========================================
 
-    if (first === "" || last === "") {
+const enterBtn = document.getElementById("enterBtn");
 
-        alert("Please enter your First Name and Last Name.");
+enterBtn.addEventListener("click", () => {
 
-        return;
+    gsap.to(".container", {
 
-    }
+        duration: .8,
 
-    /* سنربط Google Sheets هنا لاحقًا */
+        opacity: 0,
 
-    window.location.href = "home.html";
+        scale: .98,
 
-}
+        onComplete() {
+
+            // المرحلة القادمة:
+            // هنا سنعرض
+            // Congratulations Screen
+
+        }
+
+    });
+
+});
