@@ -2,95 +2,98 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>FAYROSE | Wear The Mystery</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<title>FAYROSE</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+    <!-- Background -->
+    <div class="background"></div>
 
-<div class="logo">
-🌹
-</div>
+    <!-- Dark Overlay -->
+    <div class="overlay"></div>
 
-<h1>FAYROSE</h1>
+    <!-- Fog -->
+    <div class="fog"></div>
 
-<p class="subtitle">
-Wear The Mystery.<br>
-Live The Story.
-</p>
+    <!-- Golden Particles -->
+    <div id="particles-js"></div>
 
-<div class="divider">
+    <!-- Main Content -->
+    <main class="container">
 
-<span></span>
+        <!-- Brand -->
+        <section class="hero">
 
-<i>✦</i>
+            <h1>FAYROSE</h1>
 
-<span></span>
+            <p class="tagline">
+                Wear The Mystery.<br>
+                Live The Story.
+            </p>
 
-</div>
+        </section>
 
-<p class="welcome">
-SECRET ACCESS
-  <div id="passwordBox">
+        <!-- Divider -->
+        <div class="divider">
+            <span>✦</span>
+        </div>
 
-<input
-type="password"
-id="password"
-placeholder="Enter The Secret Key">
+        <!-- Secret Access -->
+        <section class="access">
 
-<button onclick="checkPassword()">
-ENTER
-</button>
+            <h2>SECRET ACCESS</h2>
 
-<p id="error"></p>
+            <input
+                type="password"
+                id="secretKey"
+                placeholder="Secret Key"
+                autocomplete="off">
 
-</div>
+            <button id="enterBtn">
+                ENTER
+            </button>
 
-<div id="identityBox" style="display:none;">
+        </section>
 
-<h2>
-Congratulations, Seeker.
-</h2>
+        <!-- Counter -->
+        <section class="counter">
 
-<p>
-You have unlocked the First Gate.
-</p>
+            <h3>Exclusive Drop II</h3>
 
-<input
-type="text"
-id="firstname"
-placeholder="First Name">
+            <p>Remaining Places</p>
 
-<input
-type="text"
-id="lastname"
-placeholder="Last Name">
+            <div class="places">
+                30 / 30
+            </div>
 
-<input
-type="email"
-id="email"
-placeholder="Email Address">
-  
-</p><button onclick="submitIdentity()">
-ENTER THE STORY
-</button>
+        </section>
 
-</div>
+        <!-- Scroll -->
+        <div class="scroll">
 
-</div>
+            <span>↓</span>
 
-<script src="script.js"></script>
+        </div>
+
+    </main>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+    <!-- JS -->
+    <script src="script.js"></script>
 
 </body>
 
