@@ -108,5 +108,7 @@ success.style.display = "block";
         y:30,
         duration:1
     });
-
+setTimeout(() => {
+    window.location.href = "https://www.instagram.com/fayr.oseshop/";
+}, 7000);
 });
