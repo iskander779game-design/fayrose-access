@@ -423,3 +423,57 @@ transform:translateY(10px);
     height:55px;
 
 }
+.hidden{
+    display:none;
+}
+
+#register-screen{
+    display:none;
+    min-height:100vh;
+
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px;
+
+    background:#000;
+}
+
+#register-screen input{
+    width:100%;
+    max-width:320px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:1px solid #b88b2d;
+
+    background:#111;
+
+    color:white;
+
+    font-size:16px;
+}
+
+#register-screen button{
+    width:100%;
+    max-width:320px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(90deg,#8c6820,#d4af37,#8c6820);
+
+    color:black;
+
+    font-weight:bold;
+
+    font-size:17px;
+}
