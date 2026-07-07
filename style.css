@@ -1,363 +1,365 @@
-const SECRET_KEY = "FAYROSE1927"; // غيّرها إلى كلمة السر التي تريدها
+/* ==========================================
+   FAYROSE
+   Luxury Interactive Experience
+========================================== */
 
-function checkPassword() {
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    let pass = document.getElementById("password").value;
+html{
+    scroll-behavior:smooth;
+}
 
-    if (pass === SECRET_KEY) {
+body{
 
-        document.getElementById("passwordBox").style.display = "none";
-        document.getElementById("identityBox").style.display = "block";
+    font-family:'Cormorant Garamond',serif;
 
-    } else {
+    background:#000;
 
-        document.getElementById("error").innerHTML = "Wrong Secret Key";
+    color:#fff;
 
-    }
+    min-height:100vh;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+
+/* ===============================
+        BACKGROUND
+================================ */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("background.jpg") center center/cover no-repeat;
+
+    z-index:-5;
 
 }
 
-function submitIdentity() {
 
-    let first = document.getElementById("firstname").value.trim();
-    let last = document.getElementById("lastname").value.trim();
+/* ===============================
+        DARK OVERLAY
+================================ */
 
-    if (first === "" || last === "") {
+.overlay{
 
-        alert("Please enter your First Name and Last Name.");
+    position:fixed;
 
-        return;
+    inset:0;
 
-    }
+    background:
+    radial-gradient(circle at center,
+    rgba(180,140,40,.10),
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.90));
 
-    /* سنربط Google Sheets هنا لاحقًا */
+    backdrop-filter:blur(2px);
 
-    window.location.href = "home.html";
-
-}
-/* ===========================
-   PART 2
-   LOGO + TITLES
-=========================== */
-
-/* الوردة */
-
-.logo{
-
-font-size:75px;
-
-margin-bottom:20px;
-
-display:inline-block;
-
-animation:floatRose 5s ease-in-out infinite;
-
-filter:drop-shadow(0 0 18px rgba(255,60,60,.45));
+    z-index:-4;
 
 }
 
-/* عنوان FAYROSE */
 
-h1{
+/* ===============================
+            FOG
+================================ */
 
-font-family:'Cinzel',serif;
+.fog{
 
-font-size:58px;
+    position:fixed;
 
-font-weight:700;
+    inset:0;
 
-letter-spacing:8px;
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.05),
+    transparent 70%);
 
-color:#D4AF37;
+    opacity:.45;
 
-text-shadow:
+    animation:fogMove 20s ease-in-out infinite alternate;
 
-0 0 10px rgba(212,175,55,.6),
-
-0 0 30px rgba(212,175,55,.25);
-
-margin-bottom:18px;
-
-animation:titleGlow 3s ease-in-out infinite;
+    z-index:-3;
 
 }
 
-/* السطر الذهبي */
+@keyframes fogMove{
 
-.line{
+from{
 
-width:150px;
-
-height:2px;
-
-margin:22px auto;
-
-background:linear-gradient(
-
-90deg,
-
-transparent,
-
-#D4AF37,
-
-transparent
-
-);
-
-box-shadow:0 0 12px #D4AF37;
+transform:translateX(-40px);
 
 }
 
-/* النص */
+to{
 
-.subtitle{
-
-font-size:23px;
-
-line-height:40px;
-
-color:#e8e8e8;
-
-margin-bottom:30px;
-
-letter-spacing:1px;
+transform:translateX(40px);
 
 }
 
-/* رسالة الترحيب */
+}
 
-.welcome{
 
-font-family:'Cinzel',serif;
+/* ===============================
+        PARTICLES
+================================ */
 
-font-size:19px;
+#particles-js{
 
-color:#D4AF37;
+    position:fixed;
 
-margin-top:18px;
+    inset:0;
 
-margin-bottom:25px;
-
-opacity:.9;
-
-letter-spacing:2px;
+    z-index:-2;
 
 }
 
-/* الزخرفة */
+
+/* ===============================
+        MAIN CONTAINER
+================================ */
+
+.container{
+
+    width:100%;
+
+    max-width:430px;
+
+    min-height:100vh;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+
+/* ===============================
+            TITLE
+================================ */
+
+.hero h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:3rem;
+
+    color:#D4AF37;
+
+    letter-spacing:8px;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,.5),
+    0 0 25px rgba(212,175,55,.3);
+
+}
+
+
+.tagline{
+
+    margin-top:18px;
+
+    font-size:1.2rem;
+
+    color:#eee;
+
+    line-height:1.8;
+
+}
+
+
+/* ===============================
+            DIVIDER
+================================ */
 
 .divider{
 
-display:flex;
+    margin:40px 0;
 
-justify-content:center;
+    color:#D4AF37;
 
-align-items:center;
-
-gap:12px;
-
-margin:25px 0;
+    font-size:1.2rem;
 
 }
 
-.divider span{
 
-width:70px;
+/* ===============================
+        SECRET ACCESS
+================================ */
 
-height:1px;
+.access h2{
 
-background:#D4AF37;
+    font-family:'Cinzel',serif;
 
-box-shadow:0 0 10px #D4AF37;
+    color:#D4AF37;
 
-}
+    letter-spacing:3px;
 
-.divider i{
-
-color:#D4AF37;
-
-font-size:18px;
-
-}
-/* ===========================
-   PART 3
-   INPUT + BUTTON
-=========================== */
-
-/* خانة Secret Key */
-
-input{
-
-width:100%;
-
-padding:18px 22px;
-
-margin-top:18px;
-
-margin-bottom:25px;
-
-background:rgba(0,0,0,.55);
-
-border:1.5px solid rgba(212,175,55,.55);
-
-border-radius:14px;
-
-color:#fff;
-
-font-size:18px;
-
-font-family:'Cormorant Garamond',serif;
-
-outline:none;
-
-transition:.35s;
-
-backdrop-filter:blur(10px);
-
-box-shadow:0 0 15px rgba(212,175,55,.08);
+    margin-bottom:25px;
 
 }
 
-input::placeholder{
 
-color:#b9b9b9;
+.access input{
 
-letter-spacing:2px;
+    width:100%;
 
-}
+    height:55px;
 
-input:focus{
+    border:1px solid rgba(212,175,55,.4);
 
-border-color:#D4AF37;
+    border-radius:15px;
 
-box-shadow:
+    background:rgba(255,255,255,.05);
 
-0 0 10px rgba(212,175,55,.4),
+    color:white;
 
-0 0 30px rgba(212,175,55,.25);
+    text-align:center;
 
-transform:scale(1.02);
+    outline:none;
 
-}
+    backdrop-filter:blur(15px);
 
-/* زر ENTER */
-
-button{
-
-width:100%;
-  /* ===========================
-   PART 4
-   ANIMATIONS + EFFECTS
-=========================== */
-
-/* رسالة Congratulations */
-
-#identityBox{
-
-animation:fadeUp .8s ease;
+    font-size:1rem;
 
 }
 
-#identityBox h2{
 
-font-family:'Cinzel',serif;
+.access input::placeholder{
 
-font-size:30px;
-
-color:#D4AF37;
-
-margin-bottom:15px;
-
-text-shadow:0 0 18px rgba(212,175,55,.45);
+    color:#bbb;
 
 }
 
-#identityBox p{
 
-font-size:19px;
+.access button{
 
-line-height:32px;
+    width:100%;
 
-color:#ececec;
+    height:55px;
 
-margin-bottom:25px;
+    margin-top:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(90deg,#8d6b19,#d4af37,#8d6b19);
+
+    color:#000;
+
+    font-family:'Cinzel',serif;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.35s;
 
 }
 
-/* حركة الوردة */
 
-@keyframes floatRose{
+.access button:hover{
 
-0%{
+    transform:translateY(-3px);
 
-transform:translateY(0px);
+    box-shadow:0 0 25px rgba(212,175,55,.5);
+
+}
+
+
+/* ===============================
+            COUNTER
+================================ */
+
+.counter{
+
+    margin-top:40px;
+
+}
+
+
+.counter h3{
+
+    color:#D4AF37;
+
+    font-family:'Cinzel',serif;
+
+}
+
+
+.counter p{
+
+    margin-top:8px;
+
+    color:#ddd;
+
+}
+
+
+.places{
+
+    margin-top:15px;
+
+    font-size:2rem;
+
+    color:#D4AF37;
+
+    font-family:'Cinzel',serif;
+
+}
+
+
+/* ===============================
+            SCROLL
+================================ */
+
+.scroll{
+
+    margin-top:45px;
+
+    font-size:1.5rem;
+
+    color:#D4AF37;
+
+    animation:bounce 1.8s infinite;
+
+}
+
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
 
 }
 
 50%{
 
-transform:translateY(-12px);
+transform:translateY(10px);
 
 }
-
-100%{
-
-transform:translateY(0px);
-
-}
-
-}
-
-/* لمعان الشعار */
-
-/* Remaining Places */
-
-.remaining{
-
-margin-top:35px;
-
-padding-top:20px;
-
-border-top:1px solid rgba(212,175,55,.25);
-
-}
-
-.remaining-title{
-
-font-family:'Cinzel',serif;
-
-color:#D4AF37;
-
-font-size:18px;
-
-letter-spacing:2px;
-
-margin-bottom:10px;
-
-}
-
-.remaining-count{
-
-color:#ddd;
-
-font-size:18px;
-
-line-height:32px;
-
-}
-
-#counter{
-
-display:block;
-
-margin-top:10px;
-
-font-size:32px;
-
-font-family:'Cinzel',serif;
-
-color:#D4AF37;
-
-text-shadow:0 0 15px rgba(212,175,55,.45);
 
 }
