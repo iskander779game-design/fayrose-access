@@ -95,3 +95,16 @@ enterBtn.addEventListener("click", () => {
     });
 
 });
+const storyBtn = document.getElementById("storyBtn");
+
+storyBtn.addEventListener("click", () => {
+
+    document.getElementById("successMessage").style.display = "block";
+
+    gsap.from("#successMessage",{
+        opacity:0,
+        y:30,
+        duration:1
+    });
+
+});
