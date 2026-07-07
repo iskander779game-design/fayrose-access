@@ -99,7 +99,9 @@ const storyBtn = document.getElementById("storyBtn");
 
 storyBtn.addEventListener("click", () => {
 
-    document.getElementById("successMessage").style.display = "block";
+    const success = document.getElementById("successMessage");
+success.classList.remove("hidden");
+success.style.display = "block";
 
     gsap.from("#successMessage",{
         opacity:0,
