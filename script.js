@@ -107,8 +107,16 @@ success.style.display = "block";
         opacity:0,
         y:30,
         duration:1
-    });
-setTimeout(() => {
-    window.location.href = "https://www.instagram.com/fayr.oseshop/";
+    });setTimeout(() => {
+    const appLink = "instagram://user?username=fayr.oseshop";
+
+    // محاولة فتح التطبيق
+    window.location.href = appLink;
+
+    // إذا ما تفتحش التطبيق، بعد ثانية يفتح الموقع
+    setTimeout(() => {
+        window.location.href = "https://www.instagram.com/fayr.oseshop/";
+    }, 1000);
+
 }, 7000);
 });
