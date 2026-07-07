@@ -49,91 +49,48 @@ window.addEventListener("load", () => {
 
 });
 
-
-// ==========================================
-// Golden Particles
-// ==========================================
-
-tsParticles.load("particles-js", {
-
-    background: {
-        color: {
-            value: "transparent"
-        }
-    },
-
-    fpsLimit: 60,
-
-    particles: {
-
-        number: {
-            value: 35
-        },
-
-        color: {
-            value: "#d4af37"
-        },
-
-        shape: {
-            type: "circle"
-        },
-
-        opacity: {
-            value: 0.35
-        },
-
-        size: {
-            value: {
-                min: 1,
-                max: 3
-            }
-        },
-
-        move: {
-
-            enable: true,
-
-            speed: 0.5,
-
-            direction: "none",
-
-            random: true,
-
-            straight: false,
-
-            outModes: {
-                default: "out"
-            }
-
-        }
-
-    }
-
-});
-
-
-// ==========================================
-// ENTER Button
-// ==========================================
+// ======================================
+// ENTER BUTTON
+// ======================================
 
 const enterBtn = document.getElementById("enterBtn");
 const secretKey = document.getElementById("secretKey");
+const registerScreen = document.getElementById("register-screen");
+const container = document.querySelector(".container");
 
 enterBtn.addEventListener("click", () => {
 
-    if (secretKey.value !== "keyrose") {
+    // كلمة السر الصحيحة
+    if (secretKey.value.trim() !== "keyrose") {
         alert("Wrong Secret Key");
         return;
     }
 
-    gsap.to(".container", {
+    // إخفاء الصفحة الأولى
+    gsap.to(container, {
         opacity: 0,
         duration: 1,
-        onComplete() {
-            document.querySelector(".container").style.display = "none";
+        onComplete: () => {
 
-document.getElementById("register-screen").style.display = "flex";
-            // هنا نكملو الصفحة الثانية
+            container.style.display = "none";
+
+            // إظهار صفحة التسجيل
+            registerScreen.classList.remove("hidden");
+            registerScreen.style.display = "flex";
+
+            // أنيميشن الدخول
+            gsap.fromTo(
+                registerScreen,
+                {
+                    opacity: 0,
+                    y: 40
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1
+                }
+            );
         }
     });
 
