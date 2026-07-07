@@ -118,5 +118,5 @@ success.style.display = "block";
         window.location.href = "https://www.instagram.com/fayr.oseshop/";
     }, 1000);
 
-}, 7000);
+}, 5000);
 });
