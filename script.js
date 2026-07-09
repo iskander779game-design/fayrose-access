@@ -69,9 +69,6 @@ enterBtn.addEventListener("click", () => {
   alert("Wrong Secret Key");
   return;
 }
-        alert("Wrong Secret Key");
-        return;
-    }
 
     // إخفاء الصفحة الأولى
     gsap.to(container, {
