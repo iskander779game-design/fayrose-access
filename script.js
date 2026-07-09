@@ -61,7 +61,7 @@ const container = document.querySelector(".container");
 enterBtn.addEventListener("click", () => {
 
     // كلمة السر الصحيحة
-    if (secretKey.value.trim() !== "keyrose") {
+    if (secretKey.value.trim() !== "rosesword") {
         alert("Wrong Secret Key");
         return;
     }
