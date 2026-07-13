@@ -64,7 +64,7 @@ enterBtn.addEventListener("click", () => {
     if (
   secretKey.value
     .replace(/\s+/g, "")
-    .toLowerCase() !== "rosesword".replace(/\s+/g, "").toLowerCase()
+    .toLowerCase() !== "swordrose".replace(/\s+/g, "").toLowerCase()
 ) {
   alert("Wrong Secret Key");
   return;
