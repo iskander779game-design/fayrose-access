@@ -59,45 +59,10 @@ const registerScreen = document.getElementById("register-screen");
 const container = document.querySelector(".container");
 
 enterBtn.addEventListener("click", () => {
+    alert("الزر خدم");
+});
 
-    // كلمة السر الصحيحة
 
-    if (
-  secretKey.value
-    replace(/\s+/g, "")
-    .toLowerCase() !== "swordrose".replace(/\s+/g, "").toLowerCase()
-) {
-  alert("Wrong Secret Key");
-  return;
-}
-
-    // إخفاء الصفحة الأولى
-    gsap.to(container, {
-        opacity: 0,
-        duration: 1,
-        onComplete: () => {
-
-            container.style.display = "none";
-
-            // إظهار صفحة التسجيل
-            registerScreen.classList.remove("hidden");
-            registerScreen.style.display = "flex";
-
-            // أنيميشن الدخول
-            gsap.fromTo(
-                registerScreen,
-                {
-                    opacity: 0,
-                    y: 40
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1
-                }
-            );
-        }
-    });
 
 });
 const storyBtn = document.getElementById("storyBtn");
