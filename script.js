@@ -63,7 +63,7 @@ enterBtn.addEventListener("click", () => {
 
     if (
   secretKey.value
-    replace(/\s+/g, "")
+.replace(/\s+/g, "")
     .toLowerCase() !== "swordrose".replace(/\s+/g, "").toLowerCase()
 ) {
   alert("Wrong Secret Key");
@@ -94,12 +94,8 @@ enterBtn.addEventListener("click", () => {
                     y: 0,
                     duration: 1
                 }
-            );
-        }
-
-
-
-
+            );        }
+    });
 });
 const storyBtn = document.getElementById("storyBtn");
 
