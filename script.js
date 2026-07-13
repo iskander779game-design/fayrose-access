@@ -63,7 +63,7 @@ enterBtn.addEventListener("click", () => {
     // كلمة السر الصحيحة
     if (
   secretKey.value
-    
+    replace(/\s+/g, "")
     .toLowerCase() !== "swordrose".replace(/\s+/g, "").toLowerCase()
 ) {
   alert("Wrong Secret Key");
