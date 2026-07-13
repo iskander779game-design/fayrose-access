@@ -61,6 +61,7 @@ const container = document.querySelector(".container");
 enterBtn.addEventListener("click", () => {
 
     // كلمة السر الصحيحة
+    console.log(secretKey.value);
     if (
   secretKey.value
     replace(/\s+/g, "")
